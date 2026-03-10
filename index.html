@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aeyev — 정밀 피팅. 데이터로 완성.</title>
+<title>Aeyeve — 정밀 피팅. 데이터로 완성.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -60,7 +60,10 @@ header {
 }
 .logo-text {
   font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 22px;
-  background: linear-gradient(120deg, var(--navy) 40%, var(--purple));
+  color: var(--navy); letter-spacing: -0.5px;
+}
+.logo-text .eye {
+  background: linear-gradient(120deg, var(--indigo), var(--purple));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 nav { display: flex; gap: 32px; align-items: center; }
@@ -201,6 +204,137 @@ nav a:hover { color: var(--navy); }
 }
 .section-desc.ko { font-family: 'Noto Sans KR', sans-serif; font-size: 14px; }
 
+/* ── WHY / PROBLEM ───────────────────────────────────────────── */
+.why { background: var(--white); }
+.problem-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  margin-top: 56px; align-items: center;
+}
+.problem-stats { display: flex; flex-direction: column; gap: 20px; }
+.pstat {
+  display: flex; align-items: center; gap: 20px;
+  padding: 20px 24px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--white);
+  transition: all 0.3s;
+}
+.pstat:hover { border-color: rgba(107,82,171,0.25); transform: translateX(4px); }
+.pstat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 700; color: var(--navy);
+  min-width: 90px; letter-spacing: -0.02em; line-height: 1;
+}
+.pstat-num .accent { color: var(--purple); }
+.pstat-text h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+.pstat-text h4.ko { font-family: 'Noto Sans KR', sans-serif; }
+.pstat-text p  { font-size: 12px; font-weight: 300; color: var(--muted); line-height: 1.55; }
+.pstat-text p.ko { font-family: 'Noto Sans KR', sans-serif; }
+.problem-visual {
+  background: var(--light); border-radius: 20px; padding: 36px;
+  border: 1px solid var(--border);
+}
+.skull-compare { display: flex; gap: 24px; margin-bottom: 24px; }
+.skull-card {
+  flex: 1; background: var(--white); border-radius: 12px; padding: 18px;
+  border: 1px solid var(--border); text-align: center;
+}
+.skull-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 14px; font-family: 'DM Sans', sans-serif;
+}
+.skull-card.asia .skull-label { color: var(--indigo); }
+.skull-card.west .skull-label { color: var(--purple); }
+.skull-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0; border-bottom: 1px solid var(--light); font-family: 'DM Sans', sans-serif;
+}
+.skull-row:last-child { border-bottom: none; }
+.skull-row-label { font-size: 10px; color: var(--muted); }
+.skull-row-val { font-size: 12px; font-weight: 700; color: var(--navy); }
+.skull-gap-note {
+  background: rgba(107,82,171,0.07); border: 1px solid rgba(107,82,171,0.15);
+  border-radius: 10px; padding: 12px 16px;
+  font-size: 12px; color: var(--purple); font-weight: 500; text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+.skull-gap-note.ko { font-family: 'Noto Sans KR', sans-serif; font-size: 11.5px; }
+
+/* ── REMOTE FLOW ─────────────────────────────────────────────── */
+.remote { background: var(--light); }
+.remote-steps {
+  display: grid; grid-template-columns: repeat(5,1fr);
+  gap: 0; margin-top: 56px; position: relative;
+}
+.remote-steps::before {
+  content: ''; position: absolute; top: 30px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(90deg, var(--indigo), var(--purple));
+  opacity: 0.2;
+}
+.rstep { padding: 0 12px; text-align: center; position: relative; }
+.rstep-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; font-size: 22px;
+  box-shadow: 0 4px 14px rgba(26,47,90,0.08);
+  position: relative; z-index: 1; transition: all 0.3s;
+}
+.rstep:hover .rstep-icon { border-color: var(--purple); box-shadow: 0 8px 24px rgba(107,82,171,0.15); }
+.rstep-loc {
+  display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 10px; margin-bottom: 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+.rstep-loc.korea { background: rgba(26,47,90,0.08); color: var(--navy); }
+.rstep-loc.global { background: rgba(107,82,171,0.1); color: var(--purple); }
+.rstep-title { font-size: 12.5px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.rstep-title.ko { font-family: 'Noto Sans KR', sans-serif; font-size: 12px; }
+.rstep-desc  { font-size: 11px; font-weight: 300; color: var(--muted); line-height: 1.55; }
+.rstep-desc.ko { font-family: 'Noto Sans KR', sans-serif; }
+
+/* ── QUALITY ─────────────────────────────────────────────────── */
+.quality-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  margin-top: 56px; align-items: start;
+}
+.quality-left { display: flex; flex-direction: column; gap: 16px; }
+.q-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+  transition: all 0.3s;
+}
+.q-card:hover { border-color: rgba(107,82,171,0.25); box-shadow: 0 8px 28px rgba(107,82,171,0.07); }
+.q-num {
+  width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--navy), var(--purple));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+}
+.q-card h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.q-card h4.ko { font-family: 'Noto Sans KR', sans-serif; }
+.q-card p  { font-size: 12px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+.q-card p.ko { font-family: 'Noto Sans KR', sans-serif; }
+.quality-right { background: var(--light); border-radius: 20px; padding: 32px; border: 1px solid var(--border); }
+.spec-title {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--purple); margin-bottom: 20px; font-family: 'DM Sans', sans-serif;
+}
+.spec-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.spec-row:last-child { border-bottom: none; }
+.spec-key { font-size: 12px; color: var(--muted); font-weight: 300; }
+.spec-key.ko { font-family: 'Noto Sans KR', sans-serif; }
+.spec-val { font-size: 12.5px; font-weight: 700; color: var(--navy); font-family: 'DM Sans', sans-serif; }
+.cert-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+.chip {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  padding: 5px 12px; border-radius: 20px; background: rgba(26,47,90,0.07);
+  color: var(--navy); font-family: 'DM Sans', sans-serif;
+}
+
 /* ── HOW ─────────────────────────────────────────────────────── */
 .how { background: var(--light); }
 .steps {
@@ -280,7 +414,21 @@ footer {
   background: var(--text); padding: 32px 48px;
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
 }
-.footer-logo { font-weight: 700; font-size: 18px; background: linear-gradient(120deg,#7b9fff,var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.footer-logo { font-weight: 700; font-size: 18px; color: rgba(255,255,255,0.85); letter-spacing: -0.01em; }
+.footer-logo .eye { color: rgba(160,130,255,0.9); }
+.footer-contact {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 20px; border-radius: 20px;
+  border: 1px solid rgba(160,130,255,0.4);
+  color: rgba(160,130,255,0.9); font-size: 12.5px; font-weight: 600;
+  text-decoration: none; font-family: 'DM Sans', sans-serif;
+  transition: all 0.25s;
+}
+.footer-contact:hover {
+  background: rgba(160,130,255,0.12);
+  border-color: rgba(160,130,255,0.7);
+  color: #c4a8ff;
+}
 footer p { font-size: 11.5px; color: rgba(255,255,255,0.3); }
 footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
 
@@ -292,6 +440,10 @@ footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
   .features-grid { grid-template-columns: repeat(2,1fr); }
   .roadmap-grid { grid-template-columns:1fr; }
   .target-grid { grid-template-columns:1fr; }
+  .problem-grid { grid-template-columns:1fr; }
+  .remote-steps { grid-template-columns: repeat(3,1fr); }
+  .remote-steps::before { display:none; }
+  .quality-grid { grid-template-columns:1fr; }
 }
 @media(max-width:640px){
   header { padding:14px 20px; }
@@ -319,14 +471,14 @@ footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
 
 <!-- HEADER -->
 <header>
-  <div class="logo-text">Aeyev</div>
+  <div class="logo-text">A<span class="eye">eye</span>ve</div>
   <nav>
+    <a href="#why" class="ko-inline">왜 Aeyeve</a>
+    <a href="#why" class="en-inline">The Problem</a>
     <a href="#how" class="ko-inline">작동 방식</a>
     <a href="#how" class="en-inline">How It Works</a>
     <a href="#features" class="ko-inline">핵심 기능</a>
     <a href="#features" class="en-inline">Features</a>
-    <a href="#roadmap" class="ko-inline">로드맵</a>
-    <a href="#roadmap" class="en-inline">Roadmap</a>
     <a href="#target" class="ko-inline">대상 고객</a>
     <a href="#target" class="en-inline">Who We Serve</a>
   </nav>
@@ -350,8 +502,6 @@ footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
     <div class="hero-actions">
       <a href="#how" class="btn-primary ko-inline">작동 방식 보기</a>
       <a href="#how" class="btn-primary en-inline">See How It Works</a>
-      <a href="#target" class="btn-outline ko-inline">파트너 안경원 정보</a>
-      <a href="#target" class="btn-outline en-inline">Partner Optical Shops</a>
     </div>
   </div>
 
@@ -398,6 +548,73 @@ footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
     <div class="stat-label en-text">Custom Fit</div>
   </div>
 </div>
+
+
+<!-- WHY — PROBLEM -->
+<section class="section why" id="why">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-tag ko-text">왜 Aeyeve인가</div>
+      <div class="section-tag en-text">The Problem</div>
+      <h2 class="section-title-ko ko-text">기성 안경은<br>당신의 얼굴에 맞지 않습니다</h2>
+      <h2 class="section-title-en en-text">Off-the-shelf frames<br>were never made for your face</h2>
+    </div>
+    <div class="problem-grid fade-up" style="transition-delay:0.1s">
+
+      <div class="problem-stats">
+        <div class="pstat">
+          <div class="pstat-num">64<span class="accent">%</span></div>
+          <div class="pstat-text">
+            <h4 class="ko ko-text">피팅 불만족 경험</h4>
+            <h4 class="en-text">Experience Poor Fit</h4>
+            <p class="ko ko-text">한국 안경 착용자 3,780만 명 중 64%가 피팅 불만족을 경험. 코/귀 압박, 흘러내림, 두통. — 대한안경사협회 2023</p>
+            <p class="en-text">64% of Korea's 37.8M eyeglass wearers report fit problems — nose pressure, slipping, headaches. — KOA 2023</p>
+          </div>
+        </div>
+        <div class="pstat">
+          <div class="pstat-num">10<span class="accent">mm</span></div>
+          <div class="pstat-text">
+            <h4 class="ko ko-text">아시아-서양인 두상 너비 차이</h4>
+            <h4 class="en-text">Head Width Gap: Asia vs West</h4>
+            <p class="ko ko-text">아시아인 평균 162mm vs 서양인 152mm. 코 브릿지 경사각도 24–27° vs 31.6°. 골격 차이가 피팅 불일치를 구조적으로 만들어냅니다. — Farkas et al. 2005</p>
+            <p class="en-text">Asian avg. 162mm vs Western 152mm head width. Nose bridge angle 24–27° vs 31.6°. Skeletal differences create structural misfits. — Farkas et al. 2005</p>
+          </div>
+        </div>
+        <div class="pstat">
+          <div class="pstat-num">3<span class="accent">×</span></div>
+          <div class="pstat-text">
+            <h4 class="ko ko-text">미국 대비 한국 안경 가격 이점</h4>
+            <h4 class="en-text">Korea vs US Eyewear Price Gap</h4>
+            <p class="ko ko-text">미국 평균 안경 $300–500, 한국 $35–75. 가격 메리트는 명확하지만 피팅 문제로 외국인의 실제 구매 전환율은 낮습니다.</p>
+            <p class="en-text">US avg. $300–500, Korea $35–75. Price advantage is clear — but fit problems prevent international customers from actually buying.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-visual">
+        <div class="skull-compare">
+          <div class="skull-card asia">
+            <div class="skull-label" style="color:var(--indigo)">Asian</div>
+            <div class="skull-row"><span class="skull-row-label">Head Width</span><span class="skull-row-val">162 mm</span></div>
+            <div class="skull-row"><span class="skull-row-label">Head Depth</span><span class="skull-row-val">188 mm</span></div>
+            <div class="skull-row"><span class="skull-row-label">Nose Width</span><span class="skull-row-val">39–40 mm</span></div>
+            <div class="skull-row"><span class="skull-row-label">Bridge Angle</span><span class="skull-row-val">24–27°</span></div>
+          </div>
+          <div class="skull-card west">
+            <div class="skull-label" style="color:var(--purple)">Western</div>
+            <div class="skull-row"><span class="skull-row-label">Head Width</span><span class="skull-row-val">152 mm</span></div>
+            <div class="skull-row"><span class="skull-row-label">Head Depth</span><span class="skull-row-val">197 mm</span></div>
+            <div class="skull-row"><span class="skull-row-label">Nose Width</span><span class="skull-row-val">34.7 mm</span></div>
+            <div class="skull-row"><span class="skull-row-label">Bridge Angle</span><span class="skull-row-val">31.6°</span></div>
+          </div>
+        </div>
+        <div class="skull-gap-note ko-text">이 골격 차이가 코 공중부양·뺨 닿음·관자놀이 압박·흘러내림을 만듭니다.<br>어느 방향으로도 기성 프레임은 맞지 않습니다.</div>
+        <div class="skull-gap-note en-text">These skeletal differences cause floating bridges, cheek contact, temple pressure, and slipping — in both directions. Off-the-shelf never fits.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="section how" id="how">
@@ -517,50 +734,149 @@ footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
   </div>
 </section>
 
-<!-- ROADMAP -->
-<section class="section roadmap" id="roadmap">
+
+<!-- REMOTE FLOW -->
+<section class="section remote" id="remote">
   <div class="section-inner">
     <div class="fade-up">
-      <div class="section-tag ko-text">기술 로드맵</div>
-      <div class="section-tag en-text">Technology Roadmap</div>
-      <h2 class="section-title-ko ko-text">단계적으로 구축하고<br>확장하도록 설계</h2>
-      <h2 class="section-title-en en-text">Built in stages,<br>designed to scale</h2>
-      <p class="section-desc ko ko-text">Copilot Studio PoC로 빠르게 시작하고, 데이터 기반을 다진 후, 완전 통합 API 플랫폼으로 전환합니다.</p>
-      <p class="section-desc en-text">Start fast with Copilot Studio, build the data foundation, then transition to a fully integrated API platform.</p>
+      <div class="section-tag ko-text">원격 & 글로벌 주문</div>
+      <div class="section-tag en-text">Remote & Global Order</div>
+      <h2 class="section-title-ko ko-text">한국에서 피팅하고,<br>세계 어디서든 받는다</h2>
+      <h2 class="section-title-en en-text">Get fitted in Korea,<br>receive anywhere in the world</h2>
+      <p class="section-desc ko ko-text">방문이 어렵다면? 한 번의 피팅 데이터로 귀국 후 SLS 최종 프레임을 국제 특송으로 받을 수 있습니다. 재주문도 방문 없이 가능합니다.</p>
+      <p class="section-desc en-text">Can't visit again? One fitting session stores your data — your final SLS frame ships internationally. Reorders need no revisit.</p>
     </div>
-    <div class="roadmap-grid fade-up" style="transition-delay:0.1s">
+    <div class="remote-steps fade-up" style="transition-delay:0.15s">
 
-      <div class="rcard s1">
-        <div class="r-stage">Stage 1 · <span class="ko-inline">현재</span><span class="en-inline">Now</span></div>
-        <h3 class="ko ko-text">Copilot Studio PoC</h3>
-        <h3 class="en-text">Copilot Studio PoC</h3>
-        <div class="r-when">0 – 100 cases</div>
-        <p class="ko ko-text">로우코드 AI 에이전트로 AR 검사 가이드 구현. 2~4주 내 라이브 시연 가능. 정부 지원 사업 신청 및 파트너 안경원 설득에 즉시 활용합니다.</p>
-        <p class="en-text">Low-code AI agent for AR exam guidance. Live demo ready in 2–4 weeks — immediately usable for government funding applications and partner shop onboarding.</p>
-        <span class="r-badge ko-text">진행 중</span>
-        <span class="r-badge en-text">Active</span>
+      <div class="rstep">
+        <div class="rstep-icon">📋</div>
+        <div class="rstep-loc korea ko-text">방문</div>
+        <div class="rstep-loc korea en-text">In-store</div>
+        <div class="rstep-title ko ko-text">문진 & 검안</div>
+        <div class="rstep-title en-text">Exam & Anamnesis</div>
+        <div class="rstep-desc ko ko-text">안경원 방문, AI 가이드 기반 굴절검사 및 처방값 확정</div>
+        <div class="rstep-desc en-text">Visit the shop. AI-guided refraction exam, prescription confirmed.</div>
       </div>
 
-      <div class="rcard s2">
-        <div class="r-stage">Stage 2 · <span class="ko-inline">데이터 기반</span><span class="en-inline">Foundation</span></div>
-        <h3 class="ko ko-text">데이터 표준화 & 기준점</h3>
-        <h3 class="en-text">Data Standardization</h3>
-        <div class="r-when">100 – 500 cases</div>
-        <p class="ko ko-text">Copilot Agent가 데이터 표준화 엔진으로 기능합니다. AR 기기 포맷 통일, 카테고리별 처방 기준점 형성. 이 단계가 3단계 AI 품질을 결정합니다.</p>
-        <p class="en-text">Copilot Agent acts as a data standardization engine. AR device formats unified, category benchmarks established. This stage determines Stage 3 AI quality.</p>
-        <span class="r-badge ko-text">준비 중</span>
-        <span class="r-badge en-text">In Progress</span>
+      <div class="rstep">
+        <div class="rstep-icon">🖨️</div>
+        <div class="rstep-loc korea ko-text">당일</div>
+        <div class="rstep-loc korea en-text">Same Day</div>
+        <div class="rstep-title ko ko-text">FDM 시착 프레임</div>
+        <div class="rstep-title en-text">FDM Trial Frame</div>
+        <div class="rstep-desc ko ko-text">당일 제작한 시착 프레임으로 피팅값 실착 확인 및 확정</div>
+        <div class="rstep-desc en-text">Same-day trial frame — verify fit, confirm all parameters.</div>
       </div>
 
-      <div class="rcard s3">
-        <div class="r-stage">Stage 3 · <span class="ko-inline">플랫폼 전환</span><span class="en-inline">Platform</span></div>
-        <h3 class="ko ko-text">자체 API 플랫폼</h3>
-        <h3 class="en-text">Custom API Platform</h3>
-        <div class="r-when">500+ cases</div>
-        <p class="ko ko-text">Anthropic API 직접 통합, 벡터 DB 연동, Dual AI 검증 자동화, 피드백 환류 완성. 파트너 안경원에 SaaS 형태로 제공합니다.</p>
-        <p class="en-text">Full Anthropic API integration, vector DB, dual-AI verification automation, feedback loop complete. Offered as SaaS to partner optical shops.</p>
-        <span class="r-badge ko-text">예정</span>
-        <span class="r-badge en-text">Planned</span>
+      <div class="rstep">
+        <div class="rstep-icon">✈️</div>
+        <div class="rstep-loc global ko-text">출국 후</div>
+        <div class="rstep-loc global en-text">After Departure</div>
+        <div class="rstep-title ko ko-text">실생활 착용 피드백</div>
+        <div class="rstep-title en-text">Real-life Feedback</div>
+        <div class="rstep-desc ko ko-text">시착 프레임 착용 중 온라인으로 피드백 전달, 미세 조정</div>
+        <div class="rstep-desc en-text">Wear the trial frame, send feedback online. Fine-tune remotely.</div>
+      </div>
+
+      <div class="rstep">
+        <div class="rstep-icon">⚙️</div>
+        <div class="rstep-loc global ko-text">제작</div>
+        <div class="rstep-loc global en-text">Production</div>
+        <div class="rstep-title ko ko-text">SLS PA12 최종 제작</div>
+        <div class="rstep-title en-text">SLS PA12 Final Production</div>
+        <div class="rstep-desc ko ko-text">확정된 피팅 데이터로 SLS 레이저 소결 최종 프레임 제작</div>
+        <div class="rstep-desc en-text">Confirmed data → SLS laser-sintered final frame produced.</div>
+      </div>
+
+      <div class="rstep">
+        <div class="rstep-icon">📦</div>
+        <div class="rstep-loc global ko-text">배송</div>
+        <div class="rstep-loc global en-text">Delivery</div>
+        <div class="rstep-title ko ko-text">국제 특송 수령</div>
+        <div class="rstep-title en-text">International Delivery</div>
+        <div class="rstep-desc ko ko-text">DHL / FedEx 국제 특송으로 전 세계 어디든 배송. 재주문도 동일 프로세스.</div>
+        <div class="rstep-desc en-text">Shipped via DHL / FedEx worldwide. Reorders follow the same process — no revisit needed.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section class="section" id="quality">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-tag ko-text">소재 & 품질</div>
+      <div class="section-tag en-text">Material & Quality</div>
+      <h2 class="section-title-ko ko-text">3D 프린팅인데<br>진짜 튼튼한가요?</h2>
+      <h2 class="section-title-en en-text">3D printed —<br>but is it actually durable?</h2>
+    </div>
+    <div class="quality-grid fade-up" style="transition-delay:0.1s">
+
+      <div class="quality-left">
+        <div class="q-card">
+          <div class="q-num">1</div>
+          <div>
+            <h4 class="ko ko-text">배럴 폴리싱</h4>
+            <h4 class="en-text">Barrel Polishing</h4>
+            <p class="ko ko-text">세라믹 미디어 물리 연마로 SLS 특유의 거친 표면을 제거합니다. Ra 12–15μm → Ra 3–5μm.</p>
+            <p class="en-text">Physical abrasive media removes SLS surface roughness. Ra 12–15μm → Ra 3–5μm.</p>
+          </div>
+        </div>
+        <div class="q-card">
+          <div class="q-num">2</div>
+          <div>
+            <h4 class="ko ko-text">베이퍼 스무딩</h4>
+            <h4 class="en-text">Vapor Smoothing</h4>
+            <p class="ko ko-text">화학 증기로 미세 공극을 완전 밀봉합니다. 사출 성형 수준의 광택 (Ra &lt;1μm), 땀·화장품 침투 차단.</p>
+            <p class="en-text">Chemical vapor seals micro-pores completely. Injection-mold finish (Ra &lt;1μm). Sweat and cosmetics can't penetrate.</p>
+          </div>
+        </div>
+        <div class="q-card">
+          <div class="q-num">3</div>
+          <div>
+            <h4 class="ko ko-text">딥다잉 염색</h4>
+            <h4 class="en-text">Deep Dyeing</h4>
+            <p class="ko ko-text">고온 염료가 소재 내부까지 침투합니다. 표면 코팅이 아니라 탈색·박리가 없는 영구 색상.</p>
+            <p class="en-text">High-temp dye penetrates deep into the material — not a surface coat. Permanent color with no peeling or fading.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quality-right">
+        <div class="spec-title">PA12 Nylon — SLS Grade</div>
+        <div class="spec-row">
+          <span class="spec-key ko-text">인장 강도</span>
+          <span class="spec-key en-text">Tensile Strength</span>
+          <span class="spec-val">48 MPa</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key ko-text">신율 (유연성)</span>
+          <span class="spec-key en-text">Elongation at Break</span>
+          <span class="spec-val">18%</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key ko-text">열변형 온도</span>
+          <span class="spec-key en-text">Heat Deflection Temp</span>
+          <span class="spec-val">175 °C</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key ko-text">소재 안전성</span>
+          <span class="spec-key en-text">Biocompatibility</span>
+          <span class="spec-val">ISO 10993</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key ko-text">표면 마감</span>
+          <span class="spec-key en-text">Surface Finish</span>
+          <span class="spec-val ko-text">Ra &lt;1μm (사출 성형급)</span>
+          <span class="spec-val en-text">Ra &lt;1μm (Injection-grade)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key ko-text">강도 설계 방향</span>
+          <span class="spec-key en-text">Print Orientation</span>
+          <span class="spec-val ko-text">X축 수평, 응력 집중부 보강 리브</span>
+          <span class="spec-val en-text">X-axis horizontal + stress ribs</span>
+        </div>
       </div>
 
     </div>
@@ -573,50 +889,50 @@ footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
     <div class="fade-up">
       <div class="section-tag ko-text">대상 고객</div>
       <div class="section-tag en-text">Who We Serve</div>
-      <h2 class="section-title-ko ko-text">두 개의 시장,<br>하나의 정밀한 솔루션</h2>
-      <h2 class="section-title-en en-text">Two markets,<br>one precise solution</h2>
+      <h2 class="section-title-ko ko-text">국경을 넘는 피팅,<br>어디서든 완벽하게</h2>
+      <h2 class="section-title-en en-text">Fit beyond borders,<br>perfect from anywhere</h2>
     </div>
     <div class="target-grid fade-up" style="transition-delay:0.1s">
 
       <div class="tcard">
-        <h3 class="ko ko-text">🪖  주한 미군 및 가족</h3>
-        <h3 class="en-text">🪖  US Military Personnel</h3>
+        <h3 class="ko ko-text">🌍  다양한 외국인 고객</h3>
+        <h3 class="en-text">🌍  International Customers</h3>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text"><strong>해부학적 피팅 격차</strong> — 서양인 얼굴 구조는 한국 표준 프레임 규격과 맞지 않습니다.</p>
-          <p class="en-text"><strong>Anatomical fit gap</strong> — Western facial structures differ from Korean-standard frame dimensions.</p>
+          <p class="ko ko-text"><strong>인종별 얼굴 구조 차이</strong> — 서양인·동남아·중동·아프리카계 등 다양한 얼굴형에 한국 표준 프레임은 맞지 않습니다.</p>
+          <p class="en-text"><strong>Diverse facial structures</strong> — Western, Southeast Asian, Middle Eastern, and African facial profiles all differ from Korean-standard frame dimensions.</p>
         </div>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text"><strong>캠프 험프리스</strong> — 평택 인근 4만 명 이상의 군인 및 가족.</p>
-          <p class="en-text"><strong>Camp Humphreys</strong> — 40,000+ personnel and dependents near Pyeongtaek, Korea.</p>
+          <p class="ko ko-text"><strong>K-안경 관광</strong> — 한국 광학 기술을 찾아 방문하는 외국인 관광객 및 장기 거주자.</p>
+          <p class="en-text"><strong>K-eyewear tourism</strong> — International visitors and long-term residents seeking precision Korean optical services.</p>
         </div>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text"><strong>높은 구매력</strong>과 정밀 광학 제품에 대한 수요.</p>
-          <p class="en-text"><strong>High disposable income</strong> + strong demand for precision optical products.</p>
+          <p class="ko ko-text"><strong>다국어 워크플로우</strong> — 영어 기반 시스템으로 언어 장벽 없이 정확한 검안과 피팅 상담이 가능합니다.</p>
+          <p class="en-text"><strong>English-first workflow</strong> — Every step of the exam and fitting process is accessible regardless of language barrier.</p>
         </div>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text">모든 워크플로우에 <strong>영어 인터페이스</strong> 기본 탑재.</p>
-          <p class="en-text"><strong>English-language workflow</strong> built into every step of the Aeyev system.</p>
+          <p class="ko ko-text"><strong>고구매력</strong> — 품질과 정밀도에 투자하는 글로벌 소비자층을 직접 공략합니다.</p>
+          <p class="en-text"><strong>High-value customers</strong> — Global consumers who prioritize quality and precision over off-the-shelf convenience.</p>
         </div>
       </div>
 
       <div class="tcard">
-        <h3 class="ko ko-text">👓  국내 안경 시장</h3>
-        <h3 class="en-text">👓  Korean Eyewear Market</h3>
+        <h3 class="ko ko-text">📦  원격 & 온라인 판매</h3>
+        <h3 class="en-text">📦  Remote & Online Sales</h3>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text"><strong>피팅 불만족</strong> — 코받침·귀걸이 부위 불편이 주요 재구매 이유.</p>
-          <p class="en-text"><strong>Fit dissatisfaction</strong> — Nose bridge and temple fit are top complaints driving repurchase.</p>
+          <p class="ko ko-text"><strong>비대면 피팅 시스템</strong> — 얼굴 스캔 데이터와 처방전만 있으면 방문 없이 맞춤 프레임 제작이 가능합니다.</p>
+          <p class="en-text"><strong>Remote fitting system</strong> — Face scan data and prescription are all that's needed to produce a custom frame without an in-person visit.</p>
         </div>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text"><strong>K-안경 관광</strong> — 고품질 한국 광학 서비스를 찾는 외국인 방문객.</p>
-          <p class="en-text"><strong>K-eyewear tourism</strong> — International visitors seeking high-quality Korean optical services.</p>
+          <p class="ko ko-text"><strong>해외 직배송</strong> — SLS PA12 프레임은 가볍고 내구성이 높아 국제 배송에 적합합니다.</p>
+          <p class="en-text"><strong>International shipping</strong> — SLS PA12 frames are lightweight and durable, ideal for global direct delivery.</p>
         </div>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text"><strong>노안 시장</strong> — 40대 이상 인구 급증, 표준 프레임으로 충족되지 않는 수요.</p>
-          <p class="en-text"><strong>Presbyopia market</strong> — 40+ demographic growing rapidly, underserved by standard frames.</p>
+          <p class="ko ko-text"><strong>리오더 용이</strong> — 한 번 저장된 피팅 데이터로 재구매 시 재방문 없이 동일한 맞춤 프레임을 바로 제작합니다.</p>
+          <p class="en-text"><strong>Easy reorder</strong> — Once fitting data is saved, customers can reorder the exact same custom frame without a revisit.</p>
         </div>
         <div class="t-item"><div class="t-dot"></div>
-          <p class="ko ko-text"><strong>Hub & Spoke B2B</strong> — 파트너 안경원이 개발 비용 없이 AI 정밀 서비스 제공 가능.</p>
-          <p class="en-text"><strong>Hub & Spoke B2B</strong> — Partner optical shops gain AI-powered precision at no dev cost.</p>
+          <p class="ko ko-text"><strong>노안 & 특수 처방</strong> — 누진다초점 등 복잡한 처방도 원격으로 정밀하게 대응합니다.</p>
+          <p class="en-text"><strong>Progressive & specialty Rx</strong> — Complex prescriptions including progressive lenses handled precisely, even remotely.</p>
         </div>
       </div>
 
@@ -626,10 +942,14 @@ footer p.ko { font-family: 'Noto Sans KR', sans-serif; }
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Aeyev</div>
+  <div class="footer-logo">A<span class="eye">eye</span>ve</div>
   <p class="ko ko-text">정밀 피팅. 데이터로 완성.</p>
   <p class="en-text">Precision Fit. Data Defined.</p>
-  <p>© 2025 Aeyev. All rights reserved.</p>
+  <a href="mailto:unsokyi1@gmail.com" class="footer-contact">
+    <span class="ko-inline">✉ 문의하기</span>
+    <span class="en-inline">✉ Contact Us</span>
+  </a>
+  <p>© 2025 Aeyeve. All rights reserved.</p>
 </footer>
 
 <script>
